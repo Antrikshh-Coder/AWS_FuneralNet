@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - FuneralNet Cloud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .chart-placeholder {
+      width: 100%;
+      height: 300px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--glass-border);
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--glass-border);
+      margin-top: 1rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.8rem;
+      top: 0.25rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      border: 2px solid var(--deep-navy);
+    }
+
+    .timeline-time {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="text-gradient link-text" style="font-size: 1.25rem;">FuneralNet</h2>
+        <button id="sidebar-toggle" class="btn btn-glass" style="padding: 0.5rem;"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link active">
+          <i class="fa-solid fa-house"></i>
+          <span class="link-text">Overview</span>
+        </a>
+        <a href="operations.html" class="sidebar-link">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span class="link-text">Operations</span>
+        </a>
+        <a href="analytics.html" class="sidebar-link">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span class="link-text">Analytics</span>
+        </a>
+        <a href="reports.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice"></i>
+          <span class="link-text">Reports</span>
+        </a>
+      </nav>
+      <div style="padding: 1.5rem; border-top: 1px solid var(--glass-border);">
+        <a href="login.html" class="sidebar-link" style="padding: 0;">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div>
+          <h2 style="font-size: 1.25rem;">Dashboard Overview</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="btn btn-glass" style="padding: 0.5rem 1rem; border-radius: 2rem;">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <div class="flex items-center gap-1">
+            <img src="https://ui-avatars.com/api/?name=Admin+User&background=2D9CDB&color=fff" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%;">
+            <span style="font-weight: 500;">Admin</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="animate-up">
+          
+          <!-- KPIs -->
+          <div class="kpi-grid">
+            <div class="glass-card kpi-card">
+              <div class="flex justify-between items-center">
+                <span class="kpi-label">Active Cases</span>
+                <i class="fa-solid fa-briefcase" style="color: var(--accent-cyan);"></i>
+              </div>
+              <div class="kpi-value"><span class="counter" data-target="142">0</span></div>
+              <div class="flex items-center gap-1" style="font-size: 0.875rem; color: #4ade80;">
+                <i class="fa-solid fa-arrow-up"></i> 12% vs last week
+              </div>
+            </div>
+            
+            <div class="glass-card kpi-card delay-1">
+              <div class="flex justify-between items-center">
+                <span class="kpi-label">Fleet Utilization</span>
+                <i class="fa-solid fa-car" style="color: var(--cloud-blue);"></i>
+              </div>
+              <div class="kpi-value"><span class="counter" data-target="86">0</span>%</div>
+              <div class="flex items-center gap-1" style="font-size: 0.875rem; color: #4ade80;">
+                <i class="fa-solid fa-arrow-up"></i> 4% vs last week
+              </div>
+            </div>
+
+            <div class="glass-card kpi-card delay-2">
+              <div class="flex justify-between items-center">
+                <span class="kpi-label">System Health</span>
+                <i class="fa-solid fa-server" style="color: #4ade80;"></i>
+              </div>
+              <div class="kpi-value">99.9%</div>
+              <div class="flex items-center gap-1" style="font-size: 0.875rem; color: var(--text-secondary);">
+                All systems operational
+              </div>
+            </div>
+            
+            <div class="glass-card kpi-card delay-3">
+              <div class="flex justify-between items-center">
+                <span class="kpi-label">Pending Approvals</span>
+                <i class="fa-solid fa-clipboard-check" style="color: #F2994A;"></i>
+              </div>
+              <div class="kpi-value">18</div>
+              <div class="flex items-center gap-1" style="font-size: 0.875rem; color: #EB5757;">
+                <i class="fa-solid fa-circle-exclamation"></i> 3 critical
+              </div>
+            </div>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- Chart Section -->
+            <div class="glass-card delay-1">
+              <div class="flex justify-between items-center">
+                <h3>Case Volume Trend</h3>
+                <select class="form-input" style="width: auto; padding: 0.25rem 1rem;">
+                  <option>This Week</option>
+                  <option>This Month</option>
+                  <option>This Year</option>
+                </select>
+              </div>
+              <div class="chart-placeholder">
+                <i class="fa-solid fa-chart-area" style="font-size: 3rem; margin-bottom: 1rem; display: block; text-align: center;"></i>
+                <br>Interactive Chart Component Placeholder
+              </div>
+            </div>
+
+            <!-- Activity Timeline -->
+            <div class="glass-card delay-2">
+              <h3>Recent Activity</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-time">10 mins ago</div>
+                  <div style="font-weight: 500;">New intake created</div>
+                  <div class="text-secondary" style="font-size: 0.875rem;">Case #4920 - Northeast Region</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">1 hour ago</div>
+                  <div style="font-weight: 500;">Fleet dispatched</div>
+                  <div class="text-secondary" style="font-size: 0.875rem;">Vehicle Unit 12 en route to Medical Center</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">3 hours ago</div>
+                  <div style="font-weight: 500;">Report generated</div>
+                  <div class="text-secondary" style="font-size: 0.875rem;">Monthly Revenue Summary (PDF)</div>
+                </div>
+                <div class="timeline-item" style="margin-bottom: 0;">
+                  <div class="timeline-time">5 hours ago</div>
+                  <div style="font-weight: 500;">System Update</div>
+                  <div class="text-secondary" style="font-size: 0.875rem;">Security patch applied successfully</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table Section -->
+          <div class="glass-card delay-3">
+            <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+              <h3>Active Operations</h3>
+              <a href="operations.html" class="btn btn-glass" style="padding: 0.5rem 1rem; font-size: 0.875rem;">View All</a>
+            </div>
+            <div style="overflow-x: auto;">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Case ID</th>
+                    <th>Region</th>
+                    <th>Status</th>
+                    <th>Assigned To</th>
+                    <th>Est. Completion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#4920</td>
+                    <td>Northeast</td>
+                    <td><span class="status-badge status-active">In Progress</span></td>
+                    <td>Team Alpha</td>
+                    <td>Today, 14:00</td>
+                  </tr>
+                  <tr>
+                    <td>#4919</td>
+                    <td>West Coast</td>
+                    <td><span class="status-badge status-warning">Pending</span></td>
+                    <td>Unassigned</td>
+                    <td>Tomorrow, 09:00</td>
+                  </tr>
+                  <tr>
+                    <td>#4918</td>
+                    <td>South</td>
+                    <td><span class="status-badge status-error">Delayed</span></td>
+                    <td>Team Beta</td>
+                    <td>Today, 16:30</td>
+                  </tr>
+                  <tr>
+                    <td>#4917</td>
+                    <td>Midwest</td>
+                    <td><span class="status-badge status-active">In Progress</span></td>
+                    <td>Team Gamma</td>
+                    <td>Today, 11:15</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

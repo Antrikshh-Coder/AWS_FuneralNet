@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - FuneralNet Cloud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      overflow: hidden;
+    }
+    
+    .login-container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .login-illustration {
+      flex: 1;
+      background: radial-gradient(circle at bottom right, var(--deep-navy), #0a192f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-illustration::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(45, 156, 219, 0.2) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      border-radius: 50%;
+    }
+
+    .login-illustration::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(86, 204, 242, 0.15) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      border-radius: 50%;
+    }
+
+    .illustration-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 400px;
+      padding: 2rem;
+    }
+
+    .login-form-container {
+      flex: 1;
+      background: var(--bg-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+      animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .checkbox-container input {
+      accent-color: var(--accent-cyan);
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .login-illustration {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    
+    <!-- Illustration Area -->
+    <div class="login-illustration">
+      <div class="illustration-content animate-up">
+        <i class="fa-solid fa-cloud" style="font-size: 5rem; color: var(--cloud-blue); margin-bottom: 2rem;"></i>
+        <h2 style="margin-bottom: 1rem; font-size: 2.5rem;">FuneralNet Cloud</h2>
+        <p class="text-secondary" style="font-size: 1.1rem;">Secure, enterprise-grade operations platform for modern bereavement services.</p>
+      </div>
+    </div>
+
+    <!-- Login Form Area -->
+    <div class="login-form-container">
+      <div class="login-box">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Welcome Back</h2>
+          <p class="text-secondary">Please enter your credentials to access the platform.</p>
+        </div>
+
+        <form action="dashboard.html" method="GET">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <div style="position: relative;">
+              <i class="fa-regular fa-envelope" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+              <input type="email" class="form-input" style="padding-left: 2.5rem;" placeholder="admin@funeralnet.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div style="position: relative;">
+              <i class="fa-solid fa-lock" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+              <input type="password" class="form-input" style="padding-left: 2.5rem;" placeholder="••••••••" required>
+              <i class="fa-regular fa-eye" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); cursor: pointer;"></i>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center" style="margin-bottom: 2rem; font-size: 0.875rem;">
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="text-secondary">Remember me</span>
+            </label>
+            <a href="#" style="color: var(--accent-cyan); text-decoration: none;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Sign In</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 2rem; font-size: 0.875rem; color: var(--text-secondary);">
+          <p>Protected by enterprise-grade encryption.</p>
+          <p style="margin-top: 0.5rem;"><i class="fa-solid fa-shield-halved" style="color: var(--cloud-blue); margin-right: 0.5rem;"></i>HIPAA Compliant System</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

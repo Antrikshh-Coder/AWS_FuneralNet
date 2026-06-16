@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FuneralNet Bereavement Services Cloud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Specific styles for landing page */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .floating-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 1;
+      opacity: 0.5;
+      animation: float 10s infinite ease-in-out alternate;
+    }
+
+    .blob-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--cloud-blue);
+      top: -100px;
+      right: -100px;
+    }
+
+    .blob-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--accent-cyan);
+      bottom: -50px;
+      left: -50px;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(50px, 50px) scale(1.1); }
+    }
+
+    .section {
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--cloud-blue);
+      margin-bottom: 1rem;
+    }
+    
+    footer {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 3rem 0;
+      border-top: 1px solid var(--glass-border);
+      text-align: center;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body class="bg-gradient">
+
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <div class="logo">
+        <h2 class="text-gradient">FuneralNet Cloud</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#services">Services</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-glass" style="margin-right: 1rem;">Login</a>
+        <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="floating-blob blob-1"></div>
+    <div class="floating-blob blob-2"></div>
+    <div class="container grid" style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 10;">
+      <div class="hero-content animate-up">
+        <h1 style="transform: translateZ(30px);">Enterprise-Grade <br><span class="text-gradient">Bereavement Services</span></h1>
+        <p style="transform: translateZ(20px);">A modern, secure, and comprehensive cloud operations platform tailored for funeral and bereavement services management.</p>
+        <div class="flex gap-2" style="transform: translateZ(40px);">
+          <a href="dashboard.html" class="btn btn-primary">Launch Platform</a>
+          <a href="#features" class="btn btn-glass">Explore Features</a>
+        </div>
+      </div>
+      
+      <div class="hero-illustration animate-up delay-1 tilt-3d" style="transform-style: preserve-3d;">
+        <div class="glass-card" style="position: relative; width: 100%; height: 350px; display: flex; align-items: center; justify-content: center; overflow: visible; padding: 0; background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.01));">
+          
+          <!-- Mockup inner elements floating out -->
+          <div style="position: absolute; width: 80%; height: 60%; background: var(--bg-dark); border-radius: 0.5rem; top: 10%; border: 1px solid var(--glass-border); transform: translateZ(30px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="height: 10px; width: 40%; background: var(--glass-border); border-radius: 2px;"></div>
+            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+               <div style="height: 40px; width: 40px; border-radius: 50%; background: rgba(86, 204, 242, 0.2);"></div>
+               <div style="flex: 1; height: 40px; background: rgba(255,255,255,0.05); border-radius: 4px;"></div>
+            </div>
+            <div style="flex: 1; margin-top: 1rem; background: rgba(45, 156, 219, 0.1); border-radius: 4px; border: 1px dashed var(--cloud-blue);"></div>
+          </div>
+          
+          <!-- Floating UI Element 1 -->
+          <div class="glass-card" style="position: absolute; right: -20px; bottom: 20%; width: 120px; padding: 1rem; transform: translateZ(60px); text-align: center;">
+            <i class="fa-solid fa-chart-line" style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+            <div style="font-size: 0.75rem; font-weight: bold;">+12.4%</div>
+          </div>
+
+          <!-- Floating UI Element 2 -->
+          <div class="glass-card" style="position: absolute; left: -30px; top: 30%; width: 150px; padding: 1rem; transform: translateZ(80px);">
+            <div style="font-size: 0.75rem; color: var(--text-secondary);">System Status</div>
+            <div style="font-size: 1rem; font-weight: bold; color: #4ade80;">Operational</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="glass-card">
+        <div class="grid-3">
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="99">0</span>%</div>
+            <div class="stat-label">System Uptime</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="24">0</span>/7</div>
+            <div class="stat-label">Monitoring</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="1000">0</span>+</div>
+            <div class="stat-label">Locations Managed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Platform Features</h2>
+      <div class="grid-3">
+        <div class="glass-card">
+          <i class="fa-solid fa-chart-line feature-icon"></i>
+          <h3>Real-time Analytics</h3>
+          <p class="text-secondary" style="margin-top: 1rem;">Monitor performance, resource utilization, and key metrics in real-time across your entire network.</p>
+        </div>
+        <div class="glass-card delay-1">
+          <i class="fa-solid fa-shield-halved feature-icon"></i>
+          <h3>Enterprise Security</h3>
+          <p class="text-secondary" style="margin-top: 1rem;">HIPAA compliant data storage, end-to-end encryption, and role-based access controls.</p>
+        </div>
+        <div class="glass-card delay-2">
+          <i class="fa-solid fa-network-wired feature-icon"></i>
+          <h3>Multi-Region Ops</h3>
+          <p class="text-secondary" style="margin-top: 1rem;">Seamlessly manage operations across various geographical locations from a single unified dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Premium Services</h2>
+      <div class="grid-3">
+        <div class="glass-card flex-col items-center" style="text-align: center;">
+          <h3 style="margin-bottom: 1rem;">Case Management</h3>
+          <p class="text-secondary mb-4">Streamline intake, tracking, and family coordination.</p>
+          <a href="#" class="btn btn-glass" style="margin-top: 1.5rem;">Learn More</a>
+        </div>
+        <div class="glass-card flex-col items-center" style="text-align: center;">
+          <h3 style="margin-bottom: 1rem;">Resource Allocation</h3>
+          <p class="text-secondary mb-4">Optimize staff, fleet, and facility scheduling automatically.</p>
+          <a href="#" class="btn btn-glass" style="margin-top: 1.5rem;">Learn More</a>
+        </div>
+        <div class="glass-card flex-col items-center" style="text-align: center;">
+          <h3 style="margin-bottom: 1rem;">Financial Reporting</h3>
+          <p class="text-secondary mb-4">Generate comprehensive reports and revenue forecasts.</p>
+          <a href="#" class="btn btn-glass" style="margin-top: 1.5rem;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FuneralNet Bereavement Services Cloud. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

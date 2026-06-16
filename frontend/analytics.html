@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics - FuneralNet Cloud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .chart-placeholder-lg {
+      width: 100%;
+      height: 400px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--glass-border);
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+    
+    .chart-placeholder-md {
+      width: 100%;
+      height: 250px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--glass-border);
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+
+    .data-card {
+      border-left: 4px solid var(--cloud-blue);
+    }
+    
+    .data-card:nth-child(even) {
+      border-left-color: var(--accent-cyan);
+    }
+
+    .forecast-up { color: #4ade80; }
+    .forecast-down { color: #EB5757; }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="text-gradient link-text" style="font-size: 1.25rem;">FuneralNet</h2>
+        <button id="sidebar-toggle" class="btn btn-glass" style="padding: 0.5rem;"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fa-solid fa-house"></i>
+          <span class="link-text">Overview</span>
+        </a>
+        <a href="operations.html" class="sidebar-link">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span class="link-text">Operations</span>
+        </a>
+        <a href="analytics.html" class="sidebar-link active">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span class="link-text">Analytics</span>
+        </a>
+        <a href="reports.html" class="sidebar-link">
+          <i class="fa-solid fa-file-invoice"></i>
+          <span class="link-text">Reports</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div>
+          <h2 style="font-size: 1.25rem;">Executive Analytics</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <select class="form-input" style="padding: 0.5rem 1rem; width: auto; background: var(--glass-bg);">
+            <option>Q3 2026</option>
+            <option>Q2 2026</option>
+            <option>Q1 2026</option>
+            <option>FY 2025</option>
+          </select>
+          <button class="btn btn-primary"><i class="fa-solid fa-download" style="margin-right: 0.5rem;"></i> Export Data</button>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="animate-up">
+          
+          <!-- Main Chart -->
+          <div class="glass-card" style="margin-bottom: 2rem;">
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 style="margin-bottom: 0.25rem;">Revenue & Case Volume Correlation</h3>
+                <p class="text-secondary" style="font-size: 0.875rem;">Year-over-year growth analysis across all regional networks.</p>
+              </div>
+              <div class="flex gap-1">
+                <button class="btn btn-glass" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Day</button>
+                <button class="btn btn-primary" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Week</button>
+                <button class="btn btn-glass" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Month</button>
+              </div>
+            </div>
+            <div class="chart-placeholder-lg">
+              <div class="flex-col items-center">
+                <i class="fa-solid fa-chart-line" style="font-size: 4rem; margin-bottom: 1rem; color: var(--accent-cyan);"></i>
+                <span style="font-size: 1.1rem;">Interactive Multi-Axis Chart Placeholder</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- Secondary Charts -->
+            <div class="glass-card delay-1">
+              <h3>Service Distribution</h3>
+              <div class="chart-placeholder-md">
+                <div class="flex-col items-center">
+                  <i class="fa-solid fa-chart-pie" style="font-size: 3rem; margin-bottom: 1rem; color: var(--cloud-blue);"></i>
+                  <span>Donut Chart Placeholder</span>
+                </div>
+              </div>
+            </div>
+            <div class="glass-card delay-2">
+              <h3>Resource Utilization Forecast</h3>
+              <div class="chart-placeholder-md">
+                <div class="flex-col items-center">
+                  <i class="fa-solid fa-chart-bar" style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-secondary);"></i>
+                  <span>Bar Chart Placeholder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Forecast Section -->
+          <h3 style="margin-bottom: 1rem;">Q4 Projections</h3>
+          <div class="grid-3">
+            <div class="glass-card data-card delay-3">
+              <div class="text-secondary" style="font-size: 0.875rem; margin-bottom: 0.5rem;">Expected Case Volume</div>
+              <div style="font-size: 2rem; font-weight: 700;">1,245</div>
+              <div class="forecast-up" style="font-size: 0.875rem; margin-top: 0.5rem;">
+                <i class="fa-solid fa-arrow-trend-up"></i> +8.4% vs Q3
+              </div>
+            </div>
+            <div class="glass-card data-card delay-3">
+              <div class="text-secondary" style="font-size: 0.875rem; margin-bottom: 0.5rem;">Projected Revenue</div>
+              <div style="font-size: 2rem; font-weight: 700;">$4.2M</div>
+              <div class="forecast-up" style="font-size: 0.875rem; margin-top: 0.5rem;">
+                <i class="fa-solid fa-arrow-trend-up"></i> +12.1% vs Q3
+              </div>
+            </div>
+            <div class="glass-card data-card delay-3">
+              <div class="text-secondary" style="font-size: 0.875rem; margin-bottom: 0.5rem;">Average Response Time</div>
+              <div style="font-size: 2rem; font-weight: 700;">42m</div>
+              <div class="forecast-down" style="font-size: 0.875rem; margin-top: 0.5rem;">
+                <i class="fa-solid fa-arrow-trend-down"></i> -5m improvement
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
